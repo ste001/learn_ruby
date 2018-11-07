@@ -26,3 +26,27 @@ def start_of_word(word, start)
     end
     result
 end
+
+def first_word(sentence)
+    i = 0
+    result = ""
+    while (sentence[i] != " ")
+        result += sentence[i]
+        i = i + 1
+    end
+    result
+end
+
+def titleize(sentence)
+    titleized = sentence.split(" ")
+    titleized.each_index do |i|
+        if titleized[i].length > 4
+            titleized[i] = titleized[i].capitalize
+        end
+    end
+
+    titleized[0] = titleized[0].capitalize
+    titleized[titleized.length - 1] = titleized[titleized.length - 1].capitalize
+
+    titleized.join(" ")
+end
